@@ -38,6 +38,7 @@ jobs:
           {
            echo "# 📸 Fotogalerie"
            echo ""
+           echo "<p>Většinu fotek mi dělá <a href=\"https://www.adam-wolf.com\">Adam Wolf</a>: skvělý ilustrátor, fotograf a člověk.</p>"
            echo "<p>Fotografie v plné kvalitě zobrazíte kliknutím na jednotlivé náhledy.</p>"
            echo "<p align=\"center\">"
            echo ""
