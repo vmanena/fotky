@@ -1,5 +1,6 @@
 # 📸 Fotogalerie
 
+<p>Fotografie v plné kvalitě zobrazíte kliknutím na jednotlivé náhledy.</p>
 <p align="center">
 
 <a href="manena_01.jpg">
