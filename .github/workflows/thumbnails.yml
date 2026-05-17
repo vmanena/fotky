@@ -1,0 +1,44 @@
+name: Generate thumbnails
+
+on:
+  push:
+    paths:
+      - "*.jpg"
+      - "*.jpeg"
+      - "*.png"
+
+permissions:
+  contents: write
+
+jobs:
+  thumbnails:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install ImageMagick
+        run: sudo apt-get update && sudo apt-get install -y imagemagick
+
+      - name: Generate thumbnails
+        run: |
+          mkdir -p thumbs
+
+          for img in *.jpg *.jpeg *.png; do
+            [ -e "$img" ] || continue
+
+            magick "$img" \
+              -auto-orient \
+              -thumbnail 300x300 \
+              "thumbs/$img"
+          done
+
+      - name: Commit thumbnails
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git add thumbs
+
+          git diff --cached --quiet || git commit -m "Update thumbnails"
+          git push
