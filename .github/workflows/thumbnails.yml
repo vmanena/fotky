@@ -24,6 +24,7 @@ jobs:
 
       - name: Generate thumbnails
         run: |
+          rm -rf thumbs
           mkdir -p thumbs
 
           for img in *.jpg *.jpeg *.png; do
