@@ -33,7 +33,7 @@ jobs:
             convert "$img" \
               -auto-orient \
               -thumbnail 300x300^ \
-              -gravity center \
+              -gravity north \
               -extent 300x300 \
               "thumbs/$img"
           done
