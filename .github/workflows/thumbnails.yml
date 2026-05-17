@@ -29,7 +29,7 @@ jobs:
           for img in *.jpg *.jpeg *.png; do
             [ -e "$img" ] || continue
 
-            magick "$img" \
+            convert "$img" \
               -auto-orient \
               -thumbnail 300x300 \
               "thumbs/$img"
