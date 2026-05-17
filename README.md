@@ -2,7 +2,7 @@
 Fotky Václav Maněna
 | Foto | Náhled |
 |---|---|
-| manena_01.jpg | ![](manena_01.jpg) |
+| manena_01.jpg | ![Stáhnout](manena_01.jpg) |
 | manena_02.jpg | ![](manena_02.jpg) |
 | manena_03.jpg | ![](manena_03.jpg) |
 | manena_04.jpg | ![](manena_04.jpg) |
