@@ -33,6 +33,7 @@ jobs:
             convert "$img" \
               -auto-orient \
               -thumbnail 300x300 \
+              + repage \
               -background white \
               -extent 300x300 \
               "thumbs/$img"
