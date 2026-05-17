@@ -32,7 +32,9 @@ jobs:
 
             convert "$img" \
               -auto-orient \
-              -thumbnail 300x300 \
+              -thumbnail 300x300^ \
+              -gravity center \
+              -extent 300x300 \
               "thumbs/$img"
           done
 
