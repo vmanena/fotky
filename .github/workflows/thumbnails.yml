@@ -30,7 +30,7 @@ jobs:
           for img in *.jpg *.jpeg *.png; do
             [ -e "$img" ] || continue
 
-            convert "$img" -auto-orient -thumbnail 300x300 +repage -background #f0f0f0 -gravity center -extent 300x300 "thumbs/$img"
+            convert "$img" -auto-orient -thumbnail 300x300 +repage -background '#f0f0f0' -gravity center -extent 300x300 "thumbs/$img"
           done
 
       - name: Generate README
