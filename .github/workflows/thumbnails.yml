@@ -38,17 +38,23 @@ jobs:
 
       - name: Generate README
         run: |
-          cat > README.md <<'EOF'
-          # 📸 Fotogalerie
+          {
+           echo "# 📸 Fotogalerie"
+           echo ""
+           echo "<p align=\"center\">"
+           echo ""
 
-          | Náhled | Stažení originálu |
-          |---|---|
-          EOF
+           for img in *.jpg *.jpeg *.png; do
+             [ -e "$img" ] || continue
 
-          for img in *.jpg *.jpeg *.png; do
-            [ -e "$img" ] || continue
-            echo "| [![](thumbs/$img)]($img) | [⬇️ Stáhnout]($img) |" >> README.md
-          done
+             echo "<a href=\"$img\">"
+             echo "  <img src=\"thumbs/$img\">"
+             echo "</a>"
+             echo ""
+           done
+         
+           echo "</p>"
+          } > README.md
 
       - name: Commit thumbnails and README
         run: |
