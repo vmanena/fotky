@@ -1,5 +1,6 @@
 # 📸 Fotogalerie
 
+<p>Většinu fotek mi dělá <a href="https://www.adam-wolf.com">Adam Wolf</a>: skvělý ilustrátor, fotograf a člověk.</p>
 <p>Fotografie v plné kvalitě zobrazíte kliknutím na jednotlivé náhledy.</p>
 <p align="center">
 
