@@ -1,4 +1,4 @@
-name: Generate thumbnails
+name: Generate thumbnails and README
 
 on:
   workflow_dispatch:
@@ -13,7 +13,7 @@ permissions:
   contents: write
 
 jobs:
-  thumbnails:
+  gallery:
     runs-on: ubuntu-latest
 
     steps:
@@ -35,12 +35,26 @@ jobs:
               "thumbs/$img"
           done
 
-      - name: Commit thumbnails
+      - name: Generate README
+        run: |
+          cat > README.md <<'EOF'
+          # 📸 Fotogalerie
+
+          | Náhled | Stažení originálu |
+          |---|---|
+          EOF
+
+          for img in *.jpg *.jpeg *.png; do
+            [ -e "$img" ] || continue
+            echo "| [![](thumbs/$img)]($img) | [⬇️ Stáhnout]($img) |" >> README.md
+          done
+
+      - name: Commit thumbnails and README
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
 
-          git add thumbs
+          git add thumbs README.md
 
-          git diff --cached --quiet || git commit -m "Update thumbnails"
+          git diff --cached --quiet || git commit -m "Update gallery"
           git push
