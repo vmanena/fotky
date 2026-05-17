@@ -32,8 +32,8 @@ jobs:
 
             convert "$img" \
               -auto-orient \
-              -thumbnail 300x300^ \
-              -gravity north \
+              -thumbnail 300x300 \
+              -background: white \
               -extent 300x300 \
               "thumbs/$img"
           done
