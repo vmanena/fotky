@@ -33,7 +33,7 @@ jobs:
             convert "$img" \
               -auto-orient \
               -thumbnail 300x300 \
-              -background: white \
+              -background white \
               -extent 300x300 \
               "thumbs/$img"
           done
@@ -43,6 +43,7 @@ jobs:
           {
            echo "# 📸 Fotogalerie"
            echo ""
+           echo "<p>Fotografie v plné kvalitě zobrazíte kliknutím na jednotlivé náhledy.</p>"
            echo "<p align=\"center\">"
            echo ""
 
